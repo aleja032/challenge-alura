@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="encriptador.css">
+    <title>Encriptador Aleja</title>
+</head>
+<body>
+    <main>
+        <div class="text">
+            <h1>WELCOME TO MY ENCRYPTER</h1>
+        </div>
+        <div class="volver"><i class="fa-solid fa-arrow-left" style="color: #0a3871;"></i><a href="http://alejandra.adso24.com">Home back</a></div>
+        <div class="caja">
+            <p>This is a program that encrypts and decrypts your texts and was made by Aleja</p>
+        </div>
+        <div class="section">
+            <div class="container">
+                <textarea name="ingresa" id="try" cols="70" rows="30" placeholder="enter text here" style="text-transform:lowercase"></textarea>
+                    <div class="botones">
+                        <button class="a"type="submit" id="encrip"> Encrypt</button>
+                        <button class="a"type="submit" id="desencrip">decrypt</button>
+                    </div>
+            </div>
+            <div class="box">
+                <div class="recibir" id="prueba" contenteditable="true">No data entered yet</div>
+                <button class="a" id="c">Copy</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+<script>
+   /*var textarea = document.querySelector("textarea");//document.querySelector me permite acceder los datos que hay en un html eje:input,p,textarea
+	    textarea.focus();*/
+
+    function encriptar(){
+        var contenido = document.getElementById("try").value;
+      /*var posicion = contenido.indexOf("e","i");
+        contenido = contenido.replace("enter","imes");
+        console.log(contenido);*/
+        var vocales = contenido.replace(/[aeiou]/g, function(letra){ //la g sirve para que en se haga el cambio para todas las letras del texto ya sea largo o corto
+        switch(letra) {
+            case "a":
+            return "ai";
+            case "e":
+            return "enter";
+            case "i":
+            return "imes";
+            case "o":
+            return "ober";
+            case "u":
+            return "ufat";
+        }
+        });    
+        // Asigna el contenido al contenedor2  
+        document.getElementById("prueba").innerHTML = vocales;//innerHTML es una propiedad útil para acceder y manipular el contenido HTML de un elemento y poder motrarlo en otro contenedor
+    }
+    var boton=document.getElementById("encrip") // captura el id de un elemto html
+    boton.addEventListener("click", encriptar);//me permite acceder al click y manda la funcion a ejecutar
+    
+    function desencriptar(){
+        var contenido = document.getElementById("try").value;
+        var array = [contenido];
+        array.forEach(function(element) {
+            for(i=0; i<element.length; i++){
+                if(element=="enter","imes","ai","ober","ufat"){
+                    element = element.replace("enter","e");
+                    element = element.replace("imes","i");
+                    element = element.replace("ai","a");
+                    element = element.replace("ober","o");
+                    element = element.replace("ufat","u");
+                    console.log(element);
+                    document.getElementById("prueba").innerHTML=element;
+                }
+            }
+        });
+    }
+    var boton=document.getElementById("desencrip") // captura el id de un elemto html
+    boton.addEventListener("click", desencriptar);//me permite acceder al click y manda la funcion a ejecutar
+    
+
+
+    function copy() {
+    let copyText = document.querySelector("#prueba");
+   
+    document.execCommand("selectAll");//seleccione todo eltexto
+    document.execCommand("copy");//lo copia y me lo guarda en el portapapeles
+    console.log("Texto copiado: " + copyText.textContent);
+  }
+document.querySelector("#c").addEventListener("click", copy);
+
+    
+    </script>

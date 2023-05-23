@@ -1,0 +1,110 @@
+
+*{
+    padding: 0;
+
+}
+body{
+    height: 97vh;
+}
+main{
+
+    height: 99%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 1.5%;
+   background: #E5E5E5;
+   border-radius: 10px;
+}
+.volver{
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+   text-decoration: none;
+   color: black;
+}
+i{
+    font-size: 20px;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    position: relative;
+    top: -2%;
+    border-radius: 10px;
+    background-color: #0A3871;
+    color: white;
+}
+.caja{  
+    width: 80%;
+    border-radius: 10px;
+
+}
+textarea{
+    background: #E5E5E5;
+    border: none;
+    outline: none;
+}
+textarea::placeholder{
+ color: #0A3871;
+ font-family: Inter;
+font-size: 25px;
+font-weight: 300;
+line-height: 48px;
+text-align: left;
+
+}
+.section{
+    display: flex;
+    width: 80% ;
+    margin-top: 1%;
+    height: 75%;
+   justify-content: space-around;
+}
+
+.container{
+    display: flex;
+    flex-direction:column ;
+}
+.botones{
+
+    display: flex;
+    justify-content: space-around;
+
+}
+.box{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recibir{
+    box-sizing: border-box;
+    width: 80%;
+    height: 85%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    outline: none;
+    
+}
+button{
+    width: 40%;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: #0A3871;
+}
+#desencrip{
+    background-color: #D8DFE8;
+    color: #004AAD;
+}
